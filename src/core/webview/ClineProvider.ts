@@ -1312,6 +1312,8 @@ export class ClineProvider
 			customCondensingPrompt,
 			codebaseIndexConfig,
 			codebaseIndexModels,
+			profileSpecificThresholdsEnabled,
+			profileThresholds,
 		} = await this.getState()
 
 		const telemetryKey = process.env.POSTHOG_API_KEY
@@ -1416,6 +1418,8 @@ export class ClineProvider
 				codebaseIndexEmbedderBaseUrl: "",
 				codebaseIndexEmbedderModelId: "",
 			},
+			profileSpecificThresholdsEnabled: profileSpecificThresholdsEnabled ?? false,
+			profileThresholds: profileThresholds ?? {},
 		}
 	}
 
@@ -1558,6 +1562,8 @@ export class ClineProvider
 				codebaseIndexEmbedderBaseUrl: "",
 				codebaseIndexEmbedderModelId: "",
 			},
+			profileSpecificThresholdsEnabled: stateValues.profileSpecificThresholdsEnabled ?? false,
+			profileThresholds: stateValues.profileThresholds ?? {},
 		}
 	}
 

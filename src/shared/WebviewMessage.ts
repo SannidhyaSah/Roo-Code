@@ -147,6 +147,8 @@ export interface WebviewMessage {
 		| "indexingStatusUpdate"
 		| "indexCleared"
 		| "codebaseIndexConfig"
+		| "profileSpecificThresholdsEnabled"
+		| "profileThresholds"
 	text?: string
 	disabled?: boolean
 	askResponse?: ClineAskResponse

@@ -9,6 +9,7 @@ import { Button, Input, Select, SelectContent, SelectItem, SelectTrigger, Select
 import { SetCachedStateField } from "./types"
 import { SectionHeader } from "./SectionHeader"
 import { Section } from "./Section"
+import { ProfileThresholdManager } from "./ProfileThresholdManager"
 import { vscode } from "@/utils/vscode"
 
 const SUMMARY_PROMPT = `\
@@ -61,6 +62,8 @@ type ContextManagementSettingsProps = HTMLAttributes<HTMLDivElement> & {
 	maxWorkspaceFiles: number
 	showRooIgnoredFiles?: boolean
 	maxReadFileLine?: number
+	profileSpecificThresholdsEnabled: boolean
+	profileThresholds: Record<string, number>
 	setCachedStateField: SetCachedStateField<
 		| "autoCondenseContext"
 		| "autoCondenseContextPercent"
@@ -70,6 +73,8 @@ type ContextManagementSettingsProps = HTMLAttributes<HTMLDivElement> & {
 		| "maxWorkspaceFiles"
 		| "showRooIgnoredFiles"
 		| "maxReadFileLine"
+		| "profileSpecificThresholdsEnabled"
+		| "profileThresholds"
 	>
 }
 
@@ -84,6 +89,8 @@ export const ContextManagementSettings = ({
 	showRooIgnoredFiles,
 	setCachedStateField,
 	maxReadFileLine,
+	profileSpecificThresholdsEnabled,
+	profileThresholds,
 	className,
 	...props
 }: ContextManagementSettingsProps) => {
@@ -304,6 +311,37 @@ export const ContextManagementSettings = ({
 							</div>
 						</div>
 					</div>
+				)}
+			</Section>
+
+			<Section>
+				<VSCodeCheckbox
+					checked={profileSpecificThresholdsEnabled}
+					onChange={(e: any) => {
+						const isChecked = e.target.checked
+						setCachedStateField("profileSpecificThresholdsEnabled", isChecked)
+						vscode.postMessage({
+							type: "profileSpecificThresholdsEnabled",
+							bool: isChecked,
+						})
+					}}
+					data-testid="profile-specific-thresholds-checkbox">
+					<span className="font-medium">
+						{t("settings:contextManagement.profileThresholds.enabled") ||
+							"Enable Profile-Specific Thresholds"}
+					</span>
+				</VSCodeCheckbox>
+				<div className="text-vscode-descriptionForeground text-sm mt-1">
+					{t("settings:contextManagement.profileThresholds.description") ||
+						"Configure different context condensing thresholds for specific API profiles."}
+				</div>
+				{profileSpecificThresholdsEnabled && (
+					<ProfileThresholdManager
+						listApiConfigMeta={listApiConfigMeta}
+						profileThresholds={profileThresholds}
+						defaultThreshold={autoCondenseContextPercent}
+						onUpdateThresholds={(thresholds) => setCachedStateField("profileThresholds", thresholds)}
+					/>
 				)}
 			</Section>
 		</div>

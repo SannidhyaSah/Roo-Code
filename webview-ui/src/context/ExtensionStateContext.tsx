@@ -41,6 +41,10 @@ export interface ExtensionStateContextType extends ExtensionState {
 	setCondensingApiConfigId: (value: string) => void
 	customCondensingPrompt?: string
 	setCustomCondensingPrompt: (value: string) => void
+	profileSpecificThresholdsEnabled: boolean
+	profileThresholds: Record<string, number>
+	setProfileSpecificThresholdsEnabled: (value: boolean) => void
+	setProfileThresholds: (value: Record<string, number>) => void
 	setApiConfiguration: (config: ProviderSettings) => void
 	setCustomInstructions: (value?: string) => void
 	setAlwaysAllowReadOnly: (value: boolean) => void
@@ -204,6 +208,8 @@ export const ExtensionStateContextProvider: React.FC<{ children: React.ReactNode
 		organizationAllowList: ORGANIZATION_ALLOW_ALL,
 		autoCondenseContext: true,
 		autoCondenseContextPercent: 100,
+		profileSpecificThresholdsEnabled: false,
+		profileThresholds: {},
 		codebaseIndexConfig: {
 			codebaseIndexEnabled: false,
 			codebaseIndexQdrantUrl: "http://localhost:6333",
@@ -404,6 +410,9 @@ export const ExtensionStateContextProvider: React.FC<{ children: React.ReactNode
 		setCondensingApiConfigId: (value) => setState((prevState) => ({ ...prevState, condensingApiConfigId: value })),
 		setCustomCondensingPrompt: (value) =>
 			setState((prevState) => ({ ...prevState, customCondensingPrompt: value })),
+		setProfileSpecificThresholdsEnabled: (value) =>
+			setState((prevState) => ({ ...prevState, profileSpecificThresholdsEnabled: value })),
+		setProfileThresholds: (value) => setState((prevState) => ({ ...prevState, profileThresholds: value })),
 	}
 
 	return <ExtensionStateContext.Provider value={contextValue}>{children}</ExtensionStateContext.Provider>
