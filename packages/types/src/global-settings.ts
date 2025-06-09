@@ -102,7 +102,6 @@ export const globalSettingsSchema = z.object({
 	customSupportPrompts: customSupportPromptsSchema.optional(),
 	enhancementApiConfigId: z.string().optional(),
 	historyPreviewCollapsed: z.boolean().optional(),
-	profileSpecificThresholdsEnabled: z.boolean().optional(),
 	profileThresholds: z.record(z.string(), z.number()).optional(),
 })
 
@@ -190,7 +189,6 @@ export const GLOBAL_SETTINGS_KEYS = keysOf<GlobalSettings>()([
 	"enhancementApiConfigId",
 	"cachedChromeHostUrl",
 	"historyPreviewCollapsed",
-	"profileSpecificThresholdsEnabled",
 	"profileThresholds",
 ])
 

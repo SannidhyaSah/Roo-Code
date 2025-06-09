@@ -225,7 +225,6 @@ export type ExtensionState = Pick<
 
 	autoCondenseContext: boolean
 	autoCondenseContextPercent: number
-	profileSpecificThresholdsEnabled: boolean
 	profileThresholds: Record<string, number>
 }
 

@@ -1607,7 +1607,6 @@ export class Task extends EventEmitter<ClineEvents> {
 			mode,
 			autoCondenseContext = true,
 			autoCondenseContextPercent = 100,
-			profileSpecificThresholdsEnabled = false,
 			profileThresholds = {},
 		} = state ?? {}
 
@@ -1683,7 +1682,6 @@ export class Task extends EventEmitter<ClineEvents> {
 				taskId: this.taskId,
 				customCondensingPrompt,
 				condensingApiHandler,
-				profileSpecificThresholdsEnabled,
 				profileThresholds,
 				currentProfileId: state?.currentApiConfigName || "default",
 			})
