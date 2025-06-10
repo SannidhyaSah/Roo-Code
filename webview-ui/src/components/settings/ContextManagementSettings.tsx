@@ -63,6 +63,7 @@ type ContextManagementSettingsProps = HTMLAttributes<HTMLDivElement> & {
 	showRooIgnoredFiles?: boolean
 	maxReadFileLine?: number
 	profileThresholds: Record<string, number>
+	currentProfileId?: string
 	setCachedStateField: SetCachedStateField<
 		| "autoCondenseContext"
 		| "autoCondenseContextPercent"
@@ -88,11 +89,19 @@ export const ContextManagementSettings = ({
 	setCachedStateField,
 	maxReadFileLine,
 	profileThresholds,
+	currentProfileId,
 	className,
 	...props
 }: ContextManagementSettingsProps) => {
 	const { t } = useAppTranslation()
-	const [selectedThresholdProfile, setSelectedThresholdProfile] = React.useState<string>("default")
+	const [selectedThresholdProfile, setSelectedThresholdProfile] = React.useState<string>(
+		currentProfileId || "default",
+	)
+
+	// Update selected profile when current profile changes
+	React.useEffect(() => {
+		setSelectedThresholdProfile(currentProfileId || "default")
+	}, [currentProfileId])
 
 	// Helper function to get the current threshold value based on selected profile
 	const getCurrentThresholdValue = () => {
@@ -276,7 +285,7 @@ export const ContextManagementSettings = ({
 											const thresholdDisplay =
 												profileThreshold !== undefined
 													? profileThreshold === -1
-														? ` (inherits default)`
+														? ` (uses global: ${autoCondenseContextPercent}%)`
 														: ` (${profileThreshold}%)`
 													: ""
 											return (
@@ -307,8 +316,10 @@ export const ContextManagementSettings = ({
 									{selectedThresholdProfile === "default"
 										? t("settings:contextManagement.condensingThreshold.defaultDescription") ||
 											"When context reaches this percentage of the window, it will be automatically condensed"
-										: t("settings:contextManagement.condensingThreshold.profileDescription") ||
-											"Custom threshold for this specific profile"}
+										: profileThresholds[selectedThresholdProfile] === -1
+											? `This profile uses the global default threshold (${autoCondenseContextPercent}%). Adjust the slider to set a custom value.`
+											: t("settings:contextManagement.condensingThreshold.profileDescription") ||
+												"Custom threshold for this specific profile"}
 								</div>
 							</div>
 						</div>
