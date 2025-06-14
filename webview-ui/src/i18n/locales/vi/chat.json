@@ -145,6 +145,7 @@
 		"didRead": "Roo đã đọc tệp này:",
 		"wantsToEdit": "Roo muốn chỉnh sửa tệp này:",
 		"wantsToEditOutsideWorkspace": "Roo muốn chỉnh sửa tệp này bên ngoài không gian làm việc:",
+		"wantsToEditProtected": "Roo muốn chỉnh sửa tệp cấu hình được bảo vệ:",
 		"wantsToCreate": "Roo muốn tạo một tệp mới:",
 		"wantsToSearchReplace": "Roo muốn thực hiện tìm kiếm và thay thế trong tệp này:",
 		"didSearchReplace": "Roo đã thực hiện tìm kiếm và thay thế trong tệp này:",
@@ -152,7 +153,8 @@
 		"wantsToInsertWithLineNumber": "Roo muốn chèn nội dung vào dòng {{lineNumber}} của tệp này:",
 		"wantsToInsertAtEnd": "Roo muốn thêm nội dung vào cuối tệp này:",
 		"wantsToReadAndXMore": "Roo muốn đọc tệp này và {{count}} tệp khác:",
-		"wantsToReadMultiple": "Roo muốn đọc nhiều tệp:"
+		"wantsToReadMultiple": "Roo muốn đọc nhiều tệp:",
+		"wantsToApplyBatchChanges": "Roo muốn áp dụng thay đổi cho nhiều tệp:"
 	},
 	"directoryOperations": {
 		"wantsToViewTopLevel": "Roo muốn xem các tệp cấp cao nhất trong thư mục này:",
@@ -162,7 +164,9 @@
 		"wantsToViewDefinitions": "Roo muốn xem tên định nghĩa mã nguồn được sử dụng trong thư mục này:",
 		"didViewDefinitions": "Roo đã xem tên định nghĩa mã nguồn được sử dụng trong thư mục này:",
 		"wantsToSearch": "Roo muốn tìm kiếm trong thư mục này cho <code>{{regex}}</code>:",
-		"didSearch": "Roo đã tìm kiếm trong thư mục này cho <code>{{regex}}</code>:"
+		"didSearch": "Roo đã tìm kiếm trong thư mục này cho <code>{{regex}}</code>:",
+		"wantsToSearchOutsideWorkspace": "Roo muốn tìm kiếm trong thư mục này (ngoài không gian làm việc) cho <code>{{regex}}</code>:",
+		"didSearchOutsideWorkspace": "Roo đã tìm kiếm trong thư mục này (ngoài không gian làm việc) cho <code>{{regex}}</code>:"
 	},
 	"commandOutput": "Kết quả lệnh",
 	"response": "Phản hồi",
@@ -215,9 +219,9 @@
 		"title": "🎉 Roo Code {{version}} Đã phát hành",
 		"description": "Roo Code {{version}} mang đến các tính năng mạnh mẽ và cải tiến mới dựa trên phản hồi của bạn.",
 		"whatsNew": "Có gì mới",
-		"feature1": "<bold>Cô đọng ngữ cảnh thông minh được bật mặc định</bold>: Cô đọng ngữ cảnh hiện được bật mặc định với các cài đặt có thể cấu hình cho khi nào tự động cô đọng",
-		"feature2": "<bold>Nút cô đọng thủ công</bold>: Nút mới trong tiêu đề nhiệm vụ cho phép bạn kích hoạt cô đọng ngữ cảnh thủ công bất cứ lúc nào",
-		"feature3": "<bold>Cài đặt cô đọng nâng cao</bold>: Tinh chỉnh khi nào và cách thức tự động cô đọng thông qua <contextSettingsLink>Cài đặt ngữ cảnh</contextSettingsLink>",
+		"feature1": "<bold>Marketplace Thử nghiệm</bold>: Khám phá và cài đặt các chế độ và MCP từ marketplace mới (kích hoạt trong <experimentalSettingsLink>Cài đặt Thử nghiệm</experimentalSettingsLink>)",
+		"feature2": "<bold>Cải tiến thao tác tệp</bold>: Thao tác ghi tệp đa luồng thử nghiệm, và đọc đồng thời hiện có sẵn trong <contextSettingsLink>Cài đặt Ngữ cảnh</contextSettingsLink>",
+		"feature3": "<bold>Cải tiến MCP và nhiều hơn nữa</bold>: Hỗ trợ MCP nâng cao, điều khiển Mermaid, hỗ trợ Amazon Bedrock thinking và nhiều hơn nữa!",
 		"hideButton": "Ẩn thông báo",
 		"detailsDiscussLinks": "Nhận thêm chi tiết và thảo luận tại <discordLink>Discord</discordLink> và <redditLink>Reddit</redditLink> 🚀"
 	},
@@ -278,5 +282,12 @@
 		"deny": {
 			"title": "Từ chối tất cả"
 		}
+	},
+	"indexingStatus": {
+		"ready": "Chỉ mục sẵn sàng",
+		"indexing": "Đang lập chỉ mục {{percentage}}%",
+		"indexed": "Đã lập chỉ mục",
+		"error": "Lỗi chỉ mục",
+		"status": "Trạng thái chỉ mục"
 	}
 }

@@ -145,6 +145,7 @@
 		"didRead": "Roo ha llegit aquest fitxer:",
 		"wantsToEdit": "Roo vol editar aquest fitxer:",
 		"wantsToEditOutsideWorkspace": "Roo vol editar aquest fitxer fora de l'espai de treball:",
+		"wantsToEditProtected": "Roo vol editar un fitxer de configuració protegit:",
 		"wantsToCreate": "Roo vol crear un nou fitxer:",
 		"wantsToSearchReplace": "Roo vol realitzar cerca i substitució en aquest fitxer:",
 		"didSearchReplace": "Roo ha realitzat cerca i substitució en aquest fitxer:",
@@ -152,7 +153,8 @@
 		"wantsToInsertWithLineNumber": "Roo vol inserir contingut a la línia {{lineNumber}} d'aquest fitxer:",
 		"wantsToInsertAtEnd": "Roo vol afegir contingut al final d'aquest fitxer:",
 		"wantsToReadAndXMore": "En Roo vol llegir aquest fitxer i {{count}} més:",
-		"wantsToReadMultiple": "Roo vol llegir diversos fitxers:"
+		"wantsToReadMultiple": "Roo vol llegir diversos fitxers:",
+		"wantsToApplyBatchChanges": "Roo vol aplicar canvis a múltiples fitxers:"
 	},
 	"directoryOperations": {
 		"wantsToViewTopLevel": "Roo vol veure els fitxers de nivell superior en aquest directori:",
@@ -162,7 +164,9 @@
 		"wantsToViewDefinitions": "Roo vol veure noms de definicions de codi font utilitzats en aquest directori:",
 		"didViewDefinitions": "Roo ha vist noms de definicions de codi font utilitzats en aquest directori:",
 		"wantsToSearch": "Roo vol cercar en aquest directori <code>{{regex}}</code>:",
-		"didSearch": "Roo ha cercat en aquest directori <code>{{regex}}</code>:"
+		"didSearch": "Roo ha cercat en aquest directori <code>{{regex}}</code>:",
+		"wantsToSearchOutsideWorkspace": "Roo vol cercar en aquest directori (fora de l'espai de treball) <code>{{regex}}</code>:",
+		"didSearchOutsideWorkspace": "Roo ha cercat en aquest directori (fora de l'espai de treball) <code>{{regex}}</code>:"
 	},
 	"commandOutput": "Sortida de l'ordre",
 	"response": "Resposta",
@@ -215,9 +219,9 @@
 		"title": "🎉 Roo Code {{version}} publicat",
 		"description": "Roo Code {{version}} porta noves funcionalitats potents i millores basades en els teus comentaris.",
 		"whatsNew": "Novetats",
-		"feature1": "<bold>Condensació intel·ligent de context activada per defecte</bold>: La condensació de context ara està activada per defecte amb configuracions configurables per quan es produeix la condensació automàtica",
-		"feature2": "<bold>Botó de condensació manual</bold>: Nou botó a la capçalera de tasques que et permet activar manualment la condensació de context en qualsevol moment",
-		"feature3": "<bold>Configuració avançada de condensació</bold>: Ajusta quan i com es produeix la condensació automàtica a través de <contextSettingsLink>Configuració de context</contextSettingsLink>",
+		"feature1": "<bold>Marketplace Experimental</bold>: Descobreix i instal·la modes i MCP del nou marketplace (activa'l a la <experimentalSettingsLink>Configuració Experimental</experimentalSettingsLink>)",
+		"feature2": "<bold>Operacions de fitxer millorades</bold>: Operacions d'escriptura multi-concurrent experimentals i lectura concurrent ara disponibles a la <contextSettingsLink>Configuració de Context</contextSettingsLink>",
+		"feature3": "<bold>Millores MCP i més</bold>: Suport MCP millorat, controls Mermaid, suport Amazon Bedrock thinking, i més!",
 		"hideButton": "Amagar anunci",
 		"detailsDiscussLinks": "Obtingues més detalls i participa a <discordLink>Discord</discordLink> i <redditLink>Reddit</redditLink> 🚀"
 	},
@@ -278,5 +282,12 @@
 		"deny": {
 			"title": "Denegar tot"
 		}
+	},
+	"indexingStatus": {
+		"ready": "Índex preparat",
+		"indexing": "Indexant {{percentage}}%",
+		"indexed": "Indexat",
+		"error": "Error d'índex",
+		"status": "Estat de l'índex"
 	}
 }

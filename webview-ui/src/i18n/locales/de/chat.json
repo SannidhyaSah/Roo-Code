@@ -146,13 +146,15 @@
 		"didRead": "Roo hat diese Datei gelesen:",
 		"wantsToEdit": "Roo möchte diese Datei bearbeiten:",
 		"wantsToEditOutsideWorkspace": "Roo möchte diese Datei außerhalb des Arbeitsbereichs bearbeiten:",
+		"wantsToEditProtected": "Roo möchte eine geschützte Konfigurationsdatei bearbeiten:",
 		"wantsToCreate": "Roo möchte eine neue Datei erstellen:",
 		"wantsToSearchReplace": "Roo möchte in dieser Datei suchen und ersetzen:",
 		"didSearchReplace": "Roo hat Suchen und Ersetzen in dieser Datei durchgeführt:",
 		"wantsToInsert": "Roo möchte Inhalte in diese Datei einfügen:",
 		"wantsToInsertWithLineNumber": "Roo möchte Inhalte in diese Datei in Zeile {{lineNumber}} einfügen:",
 		"wantsToInsertAtEnd": "Roo möchte Inhalte am Ende dieser Datei anhängen:",
-		"wantsToReadMultiple": "Roo möchte mehrere Dateien lesen:"
+		"wantsToReadMultiple": "Roo möchte mehrere Dateien lesen:",
+		"wantsToApplyBatchChanges": "Roo möchte Änderungen an mehreren Dateien vornehmen:"
 	},
 	"directoryOperations": {
 		"wantsToViewTopLevel": "Roo möchte die Dateien auf oberster Ebene in diesem Verzeichnis anzeigen:",
@@ -162,7 +164,9 @@
 		"wantsToViewDefinitions": "Roo möchte Quellcode-Definitionsnamen in diesem Verzeichnis anzeigen:",
 		"didViewDefinitions": "Roo hat Quellcode-Definitionsnamen in diesem Verzeichnis angezeigt:",
 		"wantsToSearch": "Roo möchte dieses Verzeichnis nach <code>{{regex}}</code> durchsuchen:",
-		"didSearch": "Roo hat dieses Verzeichnis nach <code>{{regex}}</code> durchsucht:"
+		"didSearch": "Roo hat dieses Verzeichnis nach <code>{{regex}}</code> durchsucht:",
+		"wantsToSearchOutsideWorkspace": "Roo möchte dieses Verzeichnis (außerhalb des Arbeitsbereichs) nach <code>{{regex}}</code> durchsuchen:",
+		"didSearchOutsideWorkspace": "Roo hat dieses Verzeichnis (außerhalb des Arbeitsbereichs) nach <code>{{regex}}</code> durchsucht:"
 	},
 	"commandOutput": "Befehlsausgabe",
 	"response": "Antwort",
@@ -215,9 +219,9 @@
 		"title": "🎉 Roo Code {{version}} veröffentlicht",
 		"description": "Roo Code {{version}} bringt leistungsstarke neue Funktionen und Verbesserungen basierend auf deinem Feedback.",
 		"whatsNew": "Was ist neu",
-		"feature1": "<bold>Intelligente Kontext-Kondensierung standardmäßig aktiviert</bold>: Kontext-Kondensierung ist jetzt standardmäßig aktiviert mit konfigurierbaren Einstellungen für automatische Kondensierung",
-		"feature2": "<bold>Manueller Kondensierungs-Button</bold>: Neuer Button im Task-Header ermöglicht es dir, Kontext-Kondensierung jederzeit manuell auszulösen",
-		"feature3": "<bold>Erweiterte Kondensierungs-Einstellungen</bold>: Feinabstimmung wann und wie automatische Kondensierung über die <contextSettingsLink>Kontext-Einstellungen</contextSettingsLink> erfolgt",
+		"feature1": "<bold>Experimenteller Marketplace</bold>: Entdecke und installiere Modi und MCPs im neuen Marketplace (aktivierbar in den <experimentalSettingsLink>Experimentellen Einstellungen</experimentalSettingsLink>)",
+		"feature2": "<bold>Verbesserte Dateioperationen</bold>: Mehrere gleichzeitige Dateischreibvorgänge in experimentellen Einstellungen und gleichzeitige Lesevorgänge jetzt in den <contextSettingsLink>Kontext-Einstellungen</contextSettingsLink>",
+		"feature3": "<bold>MCP-Verbesserungen & mehr</bold>: Erweiterte MCP-Unterstützung, Mermaid-Steuerungen, Amazon Bedrock Thinking-Unterstützung und vieles mehr!",
 		"hideButton": "Ankündigung ausblenden",
 		"detailsDiscussLinks": "Erhalte mehr Details und diskutiere auf <discordLink>Discord</discordLink> und <redditLink>Reddit</redditLink> 🚀"
 	},
@@ -278,5 +282,12 @@
 		"deny": {
 			"title": "Alle ablehnen"
 		}
+	},
+	"indexingStatus": {
+		"ready": "Index bereit",
+		"indexing": "Indizierung {{percentage}}%",
+		"indexed": "Indiziert",
+		"error": "Index-Fehler",
+		"status": "Index-Status"
 	}
 }

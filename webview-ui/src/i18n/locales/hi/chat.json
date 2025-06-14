@@ -145,6 +145,7 @@
 		"didRead": "Roo ने इस फ़ाइल को पढ़ा:",
 		"wantsToEdit": "Roo इस फ़ाइल को संपादित करना चाहता है:",
 		"wantsToEditOutsideWorkspace": "Roo कार्यक्षेत्र के बाहर इस फ़ाइल को संपादित करना चाहता है:",
+		"wantsToEditProtected": "Roo एक सुरक्षित कॉन्फ़िगरेशन फ़ाइल को संपादित करना चाहता है:",
 		"wantsToCreate": "Roo एक नई फ़ाइल बनाना चाहता है:",
 		"wantsToSearchReplace": "Roo इस फ़ाइल में खोज और प्रतिस्थापन करना चाहता है:",
 		"didSearchReplace": "Roo ने इस फ़ाइल में खोज और प्रतिस्थापन किया:",
@@ -152,7 +153,8 @@
 		"wantsToInsertWithLineNumber": "Roo इस फ़ाइल की {{lineNumber}} लाइन पर सामग्री डालना चाहता है:",
 		"wantsToInsertAtEnd": "Roo इस फ़ाइल के अंत में सामग्री जोड़ना चाहता है:",
 		"wantsToReadAndXMore": "रू इस फ़ाइल को और {{count}} अन्य को पढ़ना चाहता है:",
-		"wantsToReadMultiple": "Roo कई फ़ाइलें पढ़ना चाहता है:"
+		"wantsToReadMultiple": "Roo कई फ़ाइलें पढ़ना चाहता है:",
+		"wantsToApplyBatchChanges": "Roo कई फ़ाइलों में परिवर्तन लागू करना चाहता है:"
 	},
 	"directoryOperations": {
 		"wantsToViewTopLevel": "Roo इस निर्देशिका में शीर्ष स्तर की फ़ाइलें देखना चाहता है:",
@@ -162,7 +164,9 @@
 		"wantsToViewDefinitions": "Roo इस निर्देशिका में उपयोग किए गए सोर्स कोड परिभाषा नामों को देखना चाहता है:",
 		"didViewDefinitions": "Roo ने इस निर्देशिका में उपयोग किए गए सोर्स कोड परिभाषा नामों को देखा:",
 		"wantsToSearch": "Roo इस निर्देशिका में <code>{{regex}}</code> के लिए खोज करना चाहता है:",
-		"didSearch": "Roo ने इस निर्देशिका में <code>{{regex}}</code> के लिए खोज की:"
+		"didSearch": "Roo ने इस निर्देशिका में <code>{{regex}}</code> के लिए खोज की:",
+		"wantsToSearchOutsideWorkspace": "Roo इस निर्देशिका (कार्यक्षेत्र के बाहर) में <code>{{regex}}</code> के लिए खोज करना चाहता है:",
+		"didSearchOutsideWorkspace": "Roo ने इस निर्देशिका (कार्यक्षेत्र के बाहर) में <code>{{regex}}</code> के लिए खोज की:"
 	},
 	"commandOutput": "कमांड आउटपुट",
 	"response": "प्रतिक्रिया",
@@ -215,9 +219,9 @@
 		"title": "🎉 Roo Code {{version}} रिलीज़ हुआ",
 		"description": "Roo Code {{version}} आपके फीडबैक के आधार पर शक्तिशाली नई सुविधाएँ और सुधार लाता है।",
 		"whatsNew": "नई सुविधाएँ",
-		"feature1": "<bold>बुद्धिमान संदर्भ संघनन डिफ़ॉल्ट रूप से सक्षम</bold>: संदर्भ संघनन अब डिफ़ॉल्ट रूप से सक्षम है और स्वचालित संघनन कब होगा इसके लिए कॉन्फ़िगरेबल सेटिंग्स हैं",
-		"feature2": "<bold>मैन्युअल संघनन बटन</bold>: कार्य हेडर में नया बटन आपको किसी भी समय मैन्युअल रूप से संदर्भ संघनन ट्रिगर करने की अनुमति देता है",
-		"feature3": "<bold>उन्नत संघनन सेटिंग्स</bold>: <contextSettingsLink>संदर्भ सेटिंग्स</contextSettingsLink> के माध्यम से स्वचालित संघनन कब और कैसे होता है इसे फाइन-ट्यून करें",
+		"feature1": "<bold>प्रयोगात्मक मार्केटप्लेस</bold>: नए marketplace से modes और MCP खोजें और इंस्टॉल करें (<experimentalSettingsLink>प्रयोगात्मक सेटिंग्स</experimentalSettingsLink> में सक्षम करें)",
+		"feature2": "<bold>उन्नत फ़ाइल संचालन</bold>: प्रयोगात्मक multi-concurrent फ़ाइल write संचालन और concurrent reading अब <contextSettingsLink>संदर्भ सेटिंग्स</contextSettingsLink> में उपलब्ध है",
+		"feature3": "<bold>MCP सुधार और अधिक</bold>: उन्नत MCP समर्थन, Mermaid नियंत्रण, Amazon Bedrock thinking समर्थन, और अधिक!",
 		"hideButton": "घोषणा छिपाएँ",
 		"detailsDiscussLinks": "<discordLink>Discord</discordLink> और <redditLink>Reddit</redditLink> पर अधिक जानकारी प्राप्त करें और चर्चा में भाग लें 🚀"
 	},
@@ -278,5 +282,12 @@
 		"deny": {
 			"title": "सभी अस्वीकार करें"
 		}
+	},
+	"indexingStatus": {
+		"ready": "इंडेक्स तैयार",
+		"indexing": "इंडेक्सिंग {{percentage}}%",
+		"indexed": "इंडेक्स किया गया",
+		"error": "इंडेक्स त्रुटि",
+		"status": "इंडेक्स स्थिति"
 	}
 }

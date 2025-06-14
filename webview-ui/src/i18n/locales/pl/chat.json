@@ -145,6 +145,7 @@
 		"didRead": "Roo przeczytał ten plik:",
 		"wantsToEdit": "Roo chce edytować ten plik:",
 		"wantsToEditOutsideWorkspace": "Roo chce edytować ten plik poza obszarem roboczym:",
+		"wantsToEditProtected": "Roo chce edytować chroniony plik konfiguracyjny:",
 		"wantsToCreate": "Roo chce utworzyć nowy plik:",
 		"wantsToSearchReplace": "Roo chce wykonać wyszukiwanie i zamianę w tym pliku:",
 		"didSearchReplace": "Roo wykonał wyszukiwanie i zamianę w tym pliku:",
@@ -152,7 +153,8 @@
 		"wantsToInsertWithLineNumber": "Roo chce wstawić zawartość do tego pliku w linii {{lineNumber}}:",
 		"wantsToInsertAtEnd": "Roo chce dodać zawartość na końcu tego pliku:",
 		"wantsToReadAndXMore": "Roo chce przeczytać ten plik i {{count}} więcej:",
-		"wantsToReadMultiple": "Roo chce odczytać wiele plików:"
+		"wantsToReadMultiple": "Roo chce odczytać wiele plików:",
+		"wantsToApplyBatchChanges": "Roo chce zastosować zmiany do wielu plików:"
 	},
 	"directoryOperations": {
 		"wantsToViewTopLevel": "Roo chce zobaczyć pliki najwyższego poziomu w tym katalogu:",
@@ -162,7 +164,9 @@
 		"wantsToViewDefinitions": "Roo chce zobaczyć nazwy definicji kodu źródłowego używane w tym katalogu:",
 		"didViewDefinitions": "Roo zobaczył nazwy definicji kodu źródłowego używane w tym katalogu:",
 		"wantsToSearch": "Roo chce przeszukać ten katalog w poszukiwaniu <code>{{regex}}</code>:",
-		"didSearch": "Roo przeszukał ten katalog w poszukiwaniu <code>{{regex}}</code>:"
+		"didSearch": "Roo przeszukał ten katalog w poszukiwaniu <code>{{regex}}</code>:",
+		"wantsToSearchOutsideWorkspace": "Roo chce przeszukać ten katalog (poza obszarem roboczym) w poszukiwaniu <code>{{regex}}</code>:",
+		"didSearchOutsideWorkspace": "Roo przeszukał ten katalog (poza obszarem roboczym) w poszukiwaniu <code>{{regex}}</code>:"
 	},
 	"commandOutput": "Wyjście polecenia",
 	"response": "Odpowiedź",
@@ -215,9 +219,9 @@
 		"title": "🎉 Roo Code {{version}} wydany",
 		"description": "Roo Code {{version}} przynosi potężne nowe funkcje i ulepszenia na podstawie Twoich opinii.",
 		"whatsNew": "Co nowego",
-		"feature1": "<bold>Inteligentne Kondensowanie Kontekstu Włączone Domyślnie</bold>: Kondensowanie kontekstu jest teraz włączone domyślnie z konfigurowalnymi ustawieniami określającymi kiedy następuje automatyczne kondensowanie",
-		"feature2": "<bold>Przycisk Ręcznego Kondensowania</bold>: Nowy przycisk w nagłówku zadania pozwala ręcznie uruchomić kondensowanie kontekstu w dowolnym momencie",
-		"feature3": "<bold>Ulepszone Ustawienia Kondensowania</bold>: Dostosuj kiedy i jak następuje automatyczne kondensowanie poprzez <contextSettingsLink>Ustawienia Kontekstu</contextSettingsLink>",
+		"feature1": "<bold>Eksperymentalny Marketplace</bold>: Odkryj i instaluj tryby oraz MCP z nowego marketplace (włącz w <experimentalSettingsLink>Ustawieniach Eksperymentalnych</experimentalSettingsLink>)",
+		"feature2": "<bold>Ulepszone Operacje na Plikach</bold>: Eksperymentalne operacje wielowątkowego zapisu plików, a odczyt współbieżny jest teraz dostępny w <contextSettingsLink>Ustawieniach Kontekstu</contextSettingsLink>",
+		"feature3": "<bold>Ulepszenia MCP i Więcej</bold>: Ulepszona obsługa MCP, kontrola Mermaid, wsparcie dla Amazon Bedrock thinking i więcej!",
 		"hideButton": "Ukryj ogłoszenie",
 		"detailsDiscussLinks": "Uzyskaj więcej szczegółów i dołącz do dyskusji na <discordLink>Discord</discordLink> i <redditLink>Reddit</redditLink> 🚀"
 	},
@@ -278,5 +282,12 @@
 		"deny": {
 			"title": "Odrzuć wszystko"
 		}
+	},
+	"indexingStatus": {
+		"ready": "Indeks gotowy",
+		"indexing": "Indeksowanie {{percentage}}%",
+		"indexed": "Zaindeksowane",
+		"error": "Błąd indeksu",
+		"status": "Status indeksu"
 	}
 }

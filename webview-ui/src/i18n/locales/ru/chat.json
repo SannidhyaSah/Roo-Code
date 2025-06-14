@@ -140,6 +140,7 @@
 		"didRead": "Roo прочитал этот файл:",
 		"wantsToEdit": "Roo хочет отредактировать этот файл:",
 		"wantsToEditOutsideWorkspace": "Roo хочет отредактировать этот файл вне рабочей области:",
+		"wantsToEditProtected": "Roo хочет отредактировать защищённый файл конфигурации:",
 		"wantsToCreate": "Roo хочет создать новый файл:",
 		"wantsToSearchReplace": "Roo хочет выполнить поиск и замену в этом файле:",
 		"didSearchReplace": "Roo выполнил поиск и замену в этом файле:",
@@ -147,7 +148,8 @@
 		"wantsToInsertWithLineNumber": "Roo хочет вставить содержимое в этот файл на строку {{lineNumber}}:",
 		"wantsToInsertAtEnd": "Roo хочет добавить содержимое в конец этого файла:",
 		"wantsToReadAndXMore": "Roo хочет прочитать этот файл и еще {{count}}:",
-		"wantsToReadMultiple": "Roo хочет прочитать несколько файлов:"
+		"wantsToReadMultiple": "Roo хочет прочитать несколько файлов:",
+		"wantsToApplyBatchChanges": "Roo хочет применить изменения к нескольким файлам:"
 	},
 	"directoryOperations": {
 		"wantsToViewTopLevel": "Roo хочет просмотреть файлы верхнего уровня в этой директории:",
@@ -157,7 +159,9 @@
 		"wantsToViewDefinitions": "Roo хочет просмотреть имена определений исходного кода в этой директории:",
 		"didViewDefinitions": "Roo просмотрел имена определений исходного кода в этой директории:",
 		"wantsToSearch": "Roo хочет выполнить поиск в этой директории по <code>{{regex}}</code>:",
-		"didSearch": "Roo выполнил поиск в этой директории по <code>{{regex}}</code>:"
+		"didSearch": "Roo выполнил поиск в этой директории по <code>{{regex}}</code>:",
+		"wantsToSearchOutsideWorkspace": "Roo хочет выполнить поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>:",
+		"didSearchOutsideWorkspace": "Roo выполнил поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>:"
 	},
 	"commandOutput": "Вывод команды",
 	"response": "Ответ",
@@ -202,9 +206,9 @@
 		"title": "🎉 Выпущен Roo Code {{version}}",
 		"description": "Roo Code {{version}} приносит мощные новые функции и улучшения на основе ваших отзывов.",
 		"whatsNew": "Что нового",
-		"feature1": "<bold>Интеллектуальное Сжатие Контекста Включено по Умолчанию</bold>: Сжатие контекста теперь включено по умолчанию с настраиваемыми параметрами для автоматического сжатия",
-		"feature2": "<bold>Кнопка Ручного Сжатия</bold>: Новая кнопка в заголовке задачи позволяет вручную запускать сжатие контекста в любое время",
-		"feature3": "<bold>Улучшенные Настройки Сжатия</bold>: Настройте когда и как происходит автоматическое сжатие через <contextSettingsLink>Настройки Контекста</contextSettingsLink>",
+		"feature1": "<bold>Экспериментальный Marketplace</bold>: Открывайте и устанавливайте режимы и MCP из нового маркетплейса (включить в <experimentalSettingsLink>Экспериментальных Настройках</experimentalSettingsLink>)",
+		"feature2": "<bold>Улучшенные Файловые Операции</bold>: Экспериментальные операции многопоточной записи файлов, а конкурентное чтение теперь доступно в <contextSettingsLink>Настройках Контекста</contextSettingsLink>",
+		"feature3": "<bold>Улучшения MCP и Еще</bold>: Улучшенная поддержка MCP, элементы управления Mermaid, поддержка Amazon Bedrock thinking и многое другое!",
 		"hideButton": "Скрыть объявление",
 		"detailsDiscussLinks": "Подробнее и обсуждение в <discordLink>Discord</discordLink> и <redditLink>Reddit</redditLink> 🚀"
 	},
@@ -278,5 +282,12 @@
 		"deny": {
 			"title": "Отклонить все"
 		}
+	},
+	"indexingStatus": {
+		"ready": "Индекс готов",
+		"indexing": "Индексация {{percentage}}%",
+		"indexed": "Проиндексировано",
+		"error": "Ошибка индекса",
+		"status": "Статус индекса"
 	}
 }
