@@ -1045,6 +1045,10 @@ export const webviewMessageHandler = async (
 			await updateGlobalState("customCondensingPrompt", message.text)
 			await provider.postStateToWebview()
 			break
+		case "profileThresholds":
+			await updateGlobalState("profileThresholds", message.values)
+			await provider.postStateToWebview()
+			break
 		case "autoApprovalEnabled":
 			await updateGlobalState("autoApprovalEnabled", message.bool ?? false)
 			await provider.postStateToWebview()
