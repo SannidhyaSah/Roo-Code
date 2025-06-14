@@ -255,9 +255,7 @@ export const ContextManagementSettings = ({
 						{/* Profile-specific threshold configuration */}
 						<div className="flex items-center gap-4 font-bold">
 							<FoldVertical size={16} />
-							<div>
-								{t("settings:contextManagement.condensingThreshold.label") || "Trigger Threshold"}
-							</div>
+							<div>{t("settings:contextManagement.condensingThreshold.label")}</div>
 						</div>
 
 						{/* Profile Selection Dropdown */}
@@ -286,7 +284,12 @@ export const ContextManagementSettings = ({
 										const thresholdDisplay =
 											profileThreshold !== undefined
 												? profileThreshold === -1
-													? ` (uses global: ${autoCondenseContextPercent}%)`
+													? ` ${t(
+															"settings:contextManagement.condensingThreshold.usesGlobal",
+															{
+																threshold: autoCondenseContextPercent,
+															},
+														)}`
 													: ` (${profileThreshold}%)`
 												: ""
 										return (
@@ -315,12 +318,12 @@ export const ContextManagementSettings = ({
 							</div>
 							<div className="text-vscode-descriptionForeground text-sm mt-1">
 								{selectedThresholdProfile === "default"
-									? t("settings:contextManagement.condensingThreshold.defaultDescription") ||
-										"When context reaches this percentage of the window, it will be automatically condensed"
+									? t("settings:contextManagement.condensingThreshold.defaultDescription")
 									: profileThresholds[selectedThresholdProfile] === -1
-										? `This profile uses the global default threshold (${autoCondenseContextPercent}%). Adjust the slider to set a custom value.`
-										: t("settings:contextManagement.condensingThreshold.profileDescription") ||
-											"Custom threshold for this specific profile"}
+										? t("settings:contextManagement.condensingThreshold.inheritDescription", {
+												threshold: autoCondenseContextPercent,
+											})
+										: t("settings:contextManagement.condensingThreshold.profileDescription")}
 							</div>
 						</div>
 
