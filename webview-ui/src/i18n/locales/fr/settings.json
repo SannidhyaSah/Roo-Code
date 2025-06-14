@@ -396,11 +396,13 @@
 			"description": "Nombre maximum de fichiers que l'outil 'read_file' peut traiter simultanément. Des valeurs plus élevées peuvent accélérer la lecture de plusieurs petits fichiers mais augmentent l'utilisation de la mémoire."
 		},
 		"condensingThreshold": {
-			"label": "Context Condensing Threshold",
-			"selectProfile": "Select profile for threshold",
-			"defaultProfile": "Default (applies to all unconfigured profiles)",
-			"defaultDescription": "This threshold applies to all profiles unless overridden",
-			"profileDescription": "Custom threshold for this specific profile"
+			"label": "Seuil de condensation du contexte",
+			"selectProfile": "Configurer le seuil pour le profil",
+			"defaultProfile": "Par défaut global (tous les profils)",
+			"defaultDescription": "Lorsque le contexte atteint ce pourcentage, il sera automatiquement condensé pour tous les profils sauf s'ils ont des paramètres personnalisés",
+			"profileDescription": "Seuil personnalisé pour ce profil uniquement (remplace le défaut global)",
+			"inheritDescription": "Ce profil hérite du seuil par défaut global ({{threshold}}%)",
+			"usesGlobal": "(utilise global {{threshold}}%)"
 		}
 	},
 	"terminal": {
