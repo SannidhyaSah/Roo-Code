@@ -633,6 +633,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, t
 							showRooIgnoredFiles={showRooIgnoredFiles}
 							maxReadFileLine={maxReadFileLine}
 							maxConcurrentFileReads={maxConcurrentFileReads}
+							profileThresholds={profileThresholds}
 							setCachedStateField={setCachedStateField}
 						/>
 					)}
