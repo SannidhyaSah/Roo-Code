@@ -63,8 +63,6 @@ type ContextManagementSettingsProps = HTMLAttributes<HTMLDivElement> & {
 	showRooIgnoredFiles?: boolean
 	maxReadFileLine?: number
 	maxConcurrentFileReads?: number
-	profileThresholds: Record<string, number>
-	currentProfileId?: string
 	setCachedStateField: SetCachedStateField<
 		| "autoCondenseContext"
 		| "autoCondenseContextPercent"
@@ -75,7 +73,6 @@ type ContextManagementSettingsProps = HTMLAttributes<HTMLDivElement> & {
 		| "showRooIgnoredFiles"
 		| "maxReadFileLine"
 		| "maxConcurrentFileReads"
-		| "profileThresholds"
 	>
 }
 
@@ -91,8 +88,6 @@ export const ContextManagementSettings = ({
 	setCachedStateField,
 	maxReadFileLine,
 	maxConcurrentFileReads,
-	profileThresholds,
-	currentProfileId,
 	className,
 	...props
 }: ContextManagementSettingsProps) => {
@@ -252,8 +247,6 @@ export const ContextManagementSettings = ({
 					</div>
 				</div>
 			</Section>
-
-			{/* Context Condensing Configuration */}
 			<Section className="pt-2">
 				<VSCodeCheckbox
 					checked={autoCondenseContext}
@@ -315,7 +308,7 @@ export const ContextManagementSettings = ({
 						<div>
 							<div className="flex items-center gap-2">
 								<Slider
-									min={10}
+									min={5}
 									max={100}
 									step={1}
 									value={[getCurrentThresholdValue()]}

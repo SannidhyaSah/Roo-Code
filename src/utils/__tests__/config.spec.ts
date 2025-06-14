@@ -1,6 +1,7 @@
 import { vitest, describe, it, expect, beforeEach, afterAll } from "vitest"
 import { injectEnv, injectVariables } from "../config"
 
+
 describe("injectEnv", () => {
 	const originalEnv = process.env
 

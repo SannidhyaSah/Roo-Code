@@ -1483,10 +1483,6 @@ export const webviewMessageHandler = async (
 			}
 			break
 		}
-		case "profileThresholds":
-			await updateGlobalState("profileThresholds", message.values as Record<string, number>)
-			await provider.postStateToWebview()
-			break
 		case "filterMarketplaceItems": {
 			// Check if marketplace is enabled before making API calls
 			const { experiments } = await provider.getState()
