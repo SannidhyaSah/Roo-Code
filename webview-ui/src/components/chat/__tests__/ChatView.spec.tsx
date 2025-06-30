@@ -884,51 +884,81 @@ describe("ChatView - Sound Playing Tests", () => {
 		})
 	})
 
-	it("plays celebration sound for completion results", async () => {
+	it("plays celebration sound for completion results when completionSoundPlayed is not set", async () => {
 		renderChatView()
 
-		// First hydrate state with initial task and streaming
+		const taskItem = {
+			id: "task-1",
+			number: 1,
+			ts: Date.now() - 2000,
+			task: "Initial task",
+			tokensIn: 100,
+			tokensOut: 50,
+			totalCost: 0.01,
+		}
+
+		// Send completion result without completionSoundPlayed flag
 		mockPostMessage({
 			clineMessages: [
-				{
-					type: "say",
-					say: "task",
-					ts: Date.now() - 2000,
-					text: "Initial task",
-				},
-				{
-					type: "say",
-					say: "api_req_started",
-					ts: Date.now() - 1000,
-					text: JSON.stringify({}),
-					partial: true,
-				},
+				{ type: "say", say: "task", ts: taskItem.ts, text: taskItem.task },
+				{ type: "ask", ask: "completion_result", ts: Date.now(), text: "Task completed", partial: false },
 			],
+			currentTaskItem: taskItem,
+			soundEnabled: true,
 		})
 
-		// Then send the completion result message (streaming finished)
+		await waitFor(() => expect(mockPlayFunction).toHaveBeenCalled())
+	})
+
+	it("does not play celebration sound when completionSoundPlayed is true", async () => {
+		renderChatView()
+
+		const taskItem = {
+			id: "task-1",
+			number: 1,
+			ts: Date.now() - 2000,
+			task: "Initial task",
+			tokensIn: 100,
+			tokensOut: 50,
+			totalCost: 0.01,
+			completionSoundPlayed: true,
+		}
+
+		// Send completion result with completionSoundPlayed flag
 		mockPostMessage({
 			clineMessages: [
-				{
-					type: "say",
-					say: "task",
-					ts: Date.now() - 2000,
-					text: "Initial task",
-				},
-				{
-					type: "ask",
-					ask: "completion_result",
-					ts: Date.now(),
-					text: "Task completed successfully",
-					partial: false,
-				},
+				{ type: "say", say: "task", ts: taskItem.ts, text: taskItem.task },
+				{ type: "ask", ask: "completion_result", ts: Date.now(), text: "Task completed", partial: false },
 			],
+			currentTaskItem: taskItem,
+			soundEnabled: true,
 		})
 
-		// Verify celebration sound was played
-		await waitFor(() => {
-			expect(mockPlayFunction).toHaveBeenCalled()
+		expect(mockPlayFunction).not.toHaveBeenCalled()
+	})
+
+	it("does not play sound when resuming a completed task", async () => {
+		renderChatView()
+
+		mockPostMessage({
+			clineMessages: [
+				{ type: "say", say: "task", ts: Date.now() - 2000, text: "Initial task" },
+				{ type: "ask", ask: "resume_completed_task", ts: Date.now(), text: "Resume", partial: false },
+			],
+			currentTaskItem: {
+				id: "task-1",
+				number: 1,
+				ts: Date.now() - 2000,
+				task: "Initial task",
+				tokensIn: 100,
+				tokensOut: 50,
+				totalCost: 0.01,
+				completionSoundPlayed: true,
+			},
+			soundEnabled: true,
 		})
+
+		expect(mockPlayFunction).not.toHaveBeenCalled()
 	})
 
 	it("plays progress_loop sound for api failures", async () => {

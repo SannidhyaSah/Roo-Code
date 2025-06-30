@@ -403,6 +403,16 @@ export class Task extends EventEmitter<ClineEvents> {
 
 			this.emit("taskTokenUsageUpdated", this.taskId, tokenUsage)
 
+			// Check if this is a completion save by looking for completion-related messages
+			const hasCompletionMessage = this.clineMessages.some(
+				(msg) => msg.ask === "completion_result" || msg.ask === "resume_completed_task",
+			)
+
+			// If we have a completion message, set the completionSoundPlayed flag
+			if (hasCompletionMessage) {
+				historyItem.completionSoundPlayed = true
+			}
+
 			await this.providerRef.deref()?.updateTaskHistory(historyItem)
 		} catch (error) {
 			console.error("Failed to save Roo messages:", error)

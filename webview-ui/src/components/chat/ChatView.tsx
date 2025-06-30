@@ -333,7 +333,7 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 							break
 						case "completion_result":
 							// extension waiting for feedback. but we can just present a new task button
-							if (!isPartial) {
+							if (!isPartial && soundEnabled && !currentTaskItem?.completionSoundPlayed) {
 								playSound("celebration")
 							}
 							setSendingDisabled(isPartial)
@@ -354,9 +354,6 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 							setDidClickCancel(false) // special case where we reset the cancel button state
 							break
 						case "resume_completed_task":
-							if (!isPartial) {
-								playSound("celebration")
-							}
 							setSendingDisabled(false)
 							setClineAsk("resume_completed_task")
 							setEnableButtons(true)
